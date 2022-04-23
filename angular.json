@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "admin-proyecto-grado:build:production",
+            "firebaseProject": "proyecto-grado-c700a",
+            "firebaseHostingSite": "proyecto-grado-c700a"
+          }
         }
       }
     }

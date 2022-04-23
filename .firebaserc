@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proyecto-grado-c700a": {
+      "hosting": {
+        "admin-proyecto-grado": [
+          "proyecto-grado-c700a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proyecto-grado-c700a"
+  }
+}
