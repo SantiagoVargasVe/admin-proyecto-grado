@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from '../shared/services/auth.service';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  username = '';
-
-  password = '';
-
-  constructor(public auth: AngularFireAuth) {}
+  constructor(public authService: AuthService) {}
+  isVisible = false;
+  loginForm = new FormGroup({
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
 
   ngOnInit(): void {}
 
-  login() {}
+  loginUser() {
+    this.authService.SignIn(
+      this.loginForm.value.username + '@gmail.com',
+      this.loginForm.value.password
+    );
+  }
 }

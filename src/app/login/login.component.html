@@ -1,3 +1,42 @@
 <body class="main-container">
-  <p>login works!</p>
+  <form (ngSubmit)="loginUser()" [formGroup]="loginForm" class="login-card">
+    <h1>Iniciar sesión</h1>
+    <mat-form-field appearance="outline">
+      <mat-label> Nombre de usuario</mat-label>
+
+      <input
+        matInput
+        formControlName="username"
+        placeholder="Seneca"
+        required
+      />
+      <mat-error *ngIf="loginForm.get('username')?.hasError('required')">{{
+        "El email es invalido"
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Contraseña</mat-label>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">{{
+        "La contraseña es requerida"
+      }}</mat-error>
+      <input
+        formControlName="password"
+        matInput
+        placeholder="********"
+        [type]="isVisible ? 'text' : 'password'"
+        required
+      />
+      <mat-icon matSuffix (click)="isVisible = !isVisible">visibility</mat-icon>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      [disabled]="!loginForm.valid"
+      mat-raised-button
+      color="primary"
+    >
+      Ingresar
+    </button>
+  </form>
 </body>

@@ -1,7 +1,23 @@
-.main-container {
+h1 {
+  text-align: center;
+}
+
+.login-card {
+  border-radius: 50px;
+  background: linear-gradient(225deg, #e0d2f9, #bcb0d2);
+  box-shadow: -20px 20px 60px #b2a7c6, 20px -20px 60px #f0e1ff;
   display: flex;
+  padding: 10vh;
+  gap: 30px;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+}
+
+button.login {
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.5em;
 }

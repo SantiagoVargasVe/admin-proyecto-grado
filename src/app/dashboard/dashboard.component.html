@@ -1,0 +1,31 @@
+<mat-drawer-container class="main-container">
+  <mat-drawer mode="side" opened>
+    <div class="side-container">
+      <mat-list>
+        <mat-list-item matRipple>
+          <div *ngIf="(user$ | async)?.avatar" class="user-item">
+            <img
+              class="avatar"
+              src="{{ (user$ | async)?.avatar }}"
+              alt="avatar"
+            />
+            {{ (user$ | async)?.nombre }}
+          </div>
+        </mat-list-item>
+        <mat-list-item matRipple>
+          <div class="item-list"><mat-icon>group</mat-icon> Comunidades</div>
+        </mat-list-item>
+        <mat-list-item matRipple>
+          <div class="item-list">
+            <mat-icon>insights</mat-icon>
+            Estadisticas
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <button class="logout" mat-flat-button color="accent">
+        Cerrar Sesión
+      </button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>Main content</mat-drawer-content>
+</mat-drawer-container>

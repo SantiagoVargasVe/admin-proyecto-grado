@@ -15,14 +15,6 @@ export const environment = {
     measurementId: 'G-M69PD03FX3',
   },
   production: false,
-  apiKey: 'AIzaSyCNNnB3IugWHNv4vFnSD9Wx1AT6ztN3MYw',
-  authDomain: 'proyecto-grado-c700a.firebaseapp.com',
-  databaseURL: 'https://proyecto-grado-c700a-default-rtdb.firebaseio.com',
-  projectId: 'proyecto-grado-c700a',
-  storageBucket: 'proyecto-grado-c700a.appspot.com',
-  messagingSenderId: '225632738949',
-  appId: '1:225632738949:web:5115677e4395572d1813ec',
-  measurementId: 'G-M69PD03FX3',
 };
 
 /*
