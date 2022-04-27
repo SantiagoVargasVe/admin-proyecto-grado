@@ -1,0 +1,19 @@
+<body class="community-container">
+  <mat-card class="community-card" *ngFor="let item of communities | async">
+    <mat-card-title>{{ item["id"] }}</mat-card-title>
+    <mat-card-subtitle>
+      Estudiantes activos: {{ item["estudiantes"]?.length ?? 0 }}
+    </mat-card-subtitle>
+    <mat-card-content>
+      <p class="community-description">{{ item["descripción"].cuerpo }}</p>
+    </mat-card-content>
+  </mat-card>
+</body>
+<button
+  class="add-community-button"
+  mat-fab
+  color="primary"
+  aria-label="Example icon button with a home icon"
+>
+  <mat-icon>add</mat-icon>
+</button>

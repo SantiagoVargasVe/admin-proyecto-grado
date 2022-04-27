@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AuthService } from '../shared/services/auth.service';
 import { Observable } from 'rxjs';
 import { UserData } from '../models/userData';
 @Component({
@@ -9,7 +8,7 @@ import { UserData } from '../models/userData';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private firestore: AngularFirestore, private auth: AuthService) {}
+  constructor(private firestore: AngularFirestore) {}
   public user$!: Observable<UserData>;
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('user')!);

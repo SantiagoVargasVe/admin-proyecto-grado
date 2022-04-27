@@ -1,0 +1,24 @@
+.community-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 20px;
+  padding: 20px 0 0 20px;
+}
+
+.community-card {
+  height: 250px;
+}
+.community-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.add-community-button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}
