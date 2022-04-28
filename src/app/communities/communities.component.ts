@@ -4,12 +4,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Community } from '../models/community';
 import { Observable } from 'rxjs';
 
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddCommunityComponent } from '../add-community/add-community.component';
+import { AddEventComponent } from '../add-event/add-event.component';
 
 @Component({
   selector: 'app-communities',
@@ -36,6 +33,14 @@ export class CommunitiesComponent implements OnInit {
     const dialogRef = this.dialog.open(AddCommunityComponent, {
       width: '500px',
       data: {},
+    });
+  }
+
+  openAddEvent(id: string) {
+    console.log(id);
+    const dialogRef = this.dialog.open(AddEventComponent, {
+      width: '500px',
+      data: { id },
     });
   }
 

@@ -5,11 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, lastValueFrom } from 'rxjs';
 import { Community } from '../models/community';
 import { finalize } from 'rxjs/operators';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-add-community',
   templateUrl: './add-community.component.html',

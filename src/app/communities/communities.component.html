@@ -7,6 +7,12 @@
     <mat-card-content>
       <p class="community-description">{{ item["descripción"].cuerpo }}</p>
     </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="openAddEvent(item.id || '')">
+        Añadir evento
+      </button>
+    </mat-card-actions>
   </mat-card>
 </body>
 <button

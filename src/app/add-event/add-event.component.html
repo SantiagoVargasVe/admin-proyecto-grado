@@ -1,0 +1,55 @@
+<form
+  [formGroup]="createEventForm"
+  class="form-container"
+  (ngSubmit)="createEvent()"
+>
+  <h2>Crea un nuevo evento para {{ data.id }}</h2>
+  <mat-form-field appearance="outline">
+    <mat-label> Lugar del evento</mat-label>
+
+    <input formControlName="place" type="text" matInput required />
+
+    <mat-error *ngIf="createEventForm.get('place')?.hasError('required')">{{
+      "El lugar es requerido"
+    }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label> Nombre del evento</mat-label>
+
+    <input formControlName="name" type="text" matInput required />
+
+    <mat-error *ngIf="createEventForm.get('name')?.hasError('required')">{{
+      "El nombre es requerido"
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Hora de inicio</mat-label>
+
+    <input formControlName="timeStart" type="time" matInput required />
+
+    <mat-error *ngIf="createEventForm.get('timeStart')?.hasError('required')">{{
+      "La hora de inicio es requerida"
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Hora Hora fin</mat-label>
+
+    <input formControlName="timeEnd" type="time" matInput required />
+
+    <mat-error *ngIf="createEventForm.get('timeEnd')?.hasError('required')">{{
+      "La hora de fin es requerida"
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> Fecha del evento</mat-label>
+
+    <input formControlName="date" type="date" matInput required />
+
+    <mat-error *ngIf="createEventForm.get('date')?.hasError('required')">{{
+      "La fecha es requerida"
+    }}</mat-error>
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">Crear evento</button>
+</form>

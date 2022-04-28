@@ -10,9 +10,14 @@ import { AddCommunityComponent } from '../add-community/add-community.component'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddEventComponent } from '../add-event/add-event.component';
 
 @NgModule({
-  declarations: [CommunitiesComponent, AddCommunityComponent],
+  declarations: [
+    CommunitiesComponent,
+    AddCommunityComponent,
+    AddEventComponent,
+  ],
   imports: [
     CommonModule,
     CommunitiesRoutingModule,
