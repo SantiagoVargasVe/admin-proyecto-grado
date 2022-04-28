@@ -1,0 +1,49 @@
+<form
+  (ngSubmit)="uploadFiles()"
+  [formGroup]="createCommunityForm"
+  class="form-container"
+>
+  <h2>Crea la nueva comunidad!</h2>
+  <mat-form-field appearance="outline">
+    <mat-label> Nombre de la comunidad</mat-label>
+
+    <input
+      formControlName="name"
+      matInput
+      placeholder="Aquí va el nombre"
+      required
+    />
+    <mat-error *ngIf="createCommunityForm.get('name')?.hasError('required')">{{
+      "El nombre es requerido"
+    }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label> Descripción de la comunidad</mat-label>
+
+    <textarea
+      formControlName="description"
+      matInput
+      placeholder="¿De que trata la comunidad?"
+      required
+    ></textarea>
+    <mat-error
+      *ngIf="createCommunityForm.get('description')?.hasError('required')"
+      >{{ "La descripción es requerida" }}</mat-error
+    >
+  </mat-form-field>
+
+  <input
+    [disabled]="!createCommunityForm.valid"
+    class="upload-files-button"
+    type="file"
+    (change)="onFilesChanges($event)"
+    placeholder="Aquí va el nombre"
+    required
+    multiple
+  />
+
+  <button type="submit" mat-raised-button color="primary">
+    Crear comunidad
+  </button>
+</form>

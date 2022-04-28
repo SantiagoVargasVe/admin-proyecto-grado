@@ -1,5 +1,5 @@
 export interface Community {
-  id: string;
+  id?: string;
   descripción: {
     cuerpo: string;
     imagenes: string[];
